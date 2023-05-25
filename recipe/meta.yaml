@@ -1,0 +1,53 @@
+{% set name = "community-meta-feedstock" %}
+{% set version = "0.0.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: 0
+
+outputs:
+  - name: libblas
+    script: build.sh
+    requirements:
+      build:
+      host: 
+        - openblas-devel
+      run:
+  - name: libcblas
+    script: build.sh
+    requirements:
+      build:
+      host: 
+        - openblas-devel
+      run:
+  - name: liblapack
+    script: build.sh
+    requirements:
+      build:
+      host: 
+        - openblas-devel
+      run:
+  - name: liblapacke
+    script: build.sh
+    requirements:
+      build:
+      host: 
+        - openblas-devel
+      run:
+about:
+  home: https://github.com/anaconda-community/community-meta-feedstock
+  dev_url: https://github.com/anaconda-community/community-meta-feedstock
+  doc_url: https://github.com/anaconda-community/community-meta-feedstock
+  summary: Meta feedstock for Anaconda Community
+  description: |
+    Feedstock to support changes package implementations without changing recipes
+  license: MIT
+  license_file: LICENSE.txt
+  license_family: MIT
+
+extra:
+  recipe-maintainers:
+    - ELundby45
